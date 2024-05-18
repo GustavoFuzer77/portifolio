@@ -4,18 +4,21 @@ import { activeCursorEffectOnPage } from "@/utils/cursorEffects";
 import { ButtonComponent } from "../Button";
 import ContainerComponent from "../Container";
 import ToggleComponentTheme from "../toggle-theme-component";
+import { useContext } from "react";
+import ThemeContext from "@/contexts/theme";
+import { cn } from "@/helpers/cn";
 
 export default function LeftSidePage({
   children,
 }: {
   children: React.ReactNode;
 }) {
-
+  const { theme } = useContext(ThemeContext);
+  
   activeCursorEffectOnPage();
 
-
   return (
-    <div id="main-div" className="cursor-effect flex-1">
+    <div id="main-div" className={cn("flex-1", `cursor-effect-${theme}`)}>
       <main className="h-svh flex items-center gap-16 justify-between max-w-7xl w-full m-auto">
         <section className="h-full py-16">
           <div className="flex gap-3 items-center">
@@ -32,7 +35,7 @@ export default function LeftSidePage({
               </p>
             </div>
             <div className="pt-4 mb-8">
-              <ButtonComponent border="dashed">
+              <ButtonComponent border="dashed" theme={theme}>
                 Baixe meu currículo
               </ButtonComponent>
             </div>

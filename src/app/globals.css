@@ -44,7 +44,7 @@ html {
   heigth: 100%;
 }
 
-.cursor-effect {
+.cursor-effect-dark {
   background: radial-gradient(
     600px at var(--mouse-x) var(--mouse-y),
     rgba(29, 78, 216, 0.15),
@@ -54,8 +54,8 @@ html {
 
 .cursor-effect-light {
   background: radial-gradient(
-    600px at var(--mouse-x) var(--mouse-y),
-    rgba(212, 210, 210),
+    600px at var(--mouse-x) var(--mouse-y), rgba(227, 225, 225),
+    /* rgba(212, 210, 210), */
     transparent 80%
   );
 }
