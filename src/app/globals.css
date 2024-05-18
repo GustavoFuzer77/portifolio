@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  heigth: 100vh;
+  width: 100vw;
+}
+
+html.dark {
+  --foreground-rgb: #1a1a1a;
+  --focus-color: #7289da;
+  --text-color-rgb: #ffffff;
+}
+
+html.light {
+  --foreground-rgb: #efefef;
+  --focus-color: #3498db;
+  --text-color-rgb: #333333;
+}
+
+html.light p,
+html.light h1,
+html.light span,
+html.light a,
+html.light button {
+  color: var(--text-color-rgb);
+}
+
+html.dark p,
+html.dark h1,
+html.dark span,
+html.dark a,
+html.dark button {
+  color: var(--text-color-rgb);
+}
+
+html {
+  position: relative;
+  margin: 0 auto;
+  color: var(--text-color-rgb);
+  background-color: var(--foreground-rgb);
+  width: 100%;
+  heigth: 100%;
+}
+
+.cursor-effect {
+  background: radial-gradient(
+    600px at var(--mouse-x) var(--mouse-y),
+    rgba(29, 78, 216, 0.15),
+    transparent 80%
+  );
+}
+
+.cursor-effect-light {
+  background: radial-gradient(
+    600px at var(--mouse-x) var(--mouse-y),
+    rgba(212, 210, 210),
+    transparent 80%
+  );
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
