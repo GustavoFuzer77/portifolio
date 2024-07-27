@@ -1,20 +1,24 @@
 import { cn } from "@/helpers/cn";
-import { useEffect, useState } from "react";
 
 export default function ContainerComponent({
   children,
+  theme,
 }: {
   children: React.ReactNode;
+  theme: "dark" | "light";
 }) {
-  const userTheme = (localStorage.getItem("theme") as null) ?? "dark";
-
   const themeColor = {
     dark: "",
     light: "",
   };
 
   return (
-    <div className={cn("h-full max-w-prose rounded-xl", themeColor[userTheme])}>
+    <div
+      className={cn(
+        "flex items-start justify-start overflow-y-auto w-full rounded-lg",
+        themeColor[theme]
+      )}
+    >
       {children}
     </div>
   );

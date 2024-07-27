@@ -11,7 +11,6 @@ export default function ToggleComponentTheme() {
       <input
         checked={theme === "light"}
         onClick={toggleTheme}
-        onChange={() => {}}
         type="checkbox"
       />
       <span className="slider"></span>

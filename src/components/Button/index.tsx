@@ -4,10 +4,12 @@ export const ButtonComponent = ({
   children,
   theme = "dark",
   border = "solid",
+  onClick,
 }: {
   children: React.ReactNode;
   theme?: "dark" | "light";
   border?: "dashed" | "solid";
+  onClick: () => void;
 }) => {
   const buttonDefault =
     "flex items-center gap-2 px-4 py-2 text-md rounded-lg font-semibold focus:outline-none";
@@ -23,7 +25,10 @@ export const ButtonComponent = ({
   };
 
   return (
-    <button className={cn(buttonDefault, themes[theme], borders[border])}>
+    <button
+      onClick={onClick}
+      className={cn(buttonDefault, themes[theme], borders[border])}
+    >
       {children}
     </button>
   );
