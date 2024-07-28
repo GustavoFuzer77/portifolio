@@ -8,10 +8,10 @@ export default function Project() {
   return (
     <main className="w-full p-4 sm:p-6 lg:p-8">
       <div className="flex flex-col">
-        <h2 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-4">
+        <p className="text-lg sm:text-xl lg:text-2xl font-semibold mb-4">
           Olá, {getUser()}! Aqui vou mostrar um pouco das minhas experiências
           profissionais!
-        </h2>
+        </p>
         <p className="my-3 text-sm sm:text-base lg:text-lg">
           Desde que entrei na área, sou um programador Full Stack, com mais
           experiência no ecossistema JavaScript/TypeScript. No entanto, estou
@@ -20,9 +20,9 @@ export default function Project() {
       </div>
 
       <div className="p-4 sm:p-6 lg:p-8 border rounded-lg mb-4">
-        <h2 className="text-base sm:text-lg lg:text-xl font-semibold mb-2">
+        <p className="text-base sm:text-lg lg:text-xl font-semibold mb-2">
           TDP - Sistemas de Informação
-        </h2>
+        </p>
         <span className="text-slate-400 font-extralight text-xs sm:text-sm lg:text-base leading-none block mb-2">
           Out de 2021 - o momento
         </span>

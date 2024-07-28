@@ -55,40 +55,39 @@ export default function LeftSidePage({
 
   return (
     <>
-      {loading ? (
-        <div>
-          <h1>...</h1>
-        </div>
-      ) : (
-        showModal && (
-          <div className="fixed z-10 inset-0 bg-black flex items-center justify-center">
-            <div className="flex flex-col items-center justify-center h-screen dark">
-              <div className="w-full max-w-md bg-gray-800 rounded-lg shadow-md p-6">
-                <h2 className="text-2xl font-bold text-gray-200 mb-4 text-center">
-                  Seja bem vindo(a) ao meu portfolio!
-                </h2>
-                <p></p>
-                <form className="flex flex-col">
-                  <input
-                    placeholder="Qual o seu nome ?"
-                    className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    type="text"
-                  />
-
-                  <button
-                    className="bg-gradient-to-r from-green-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4 hover:bg-green-600 hover:to-blue-600 transition ease-in-out duration-150"
-                    onClick={handleSetUser}
-                  >
-                    Continuar
-                  </button>
-                </form>
-              </div>
+      {showModal && (
+        <div className="fixed z-10 inset-0 bg-black flex items-center justify-center">
+          <div className="flex flex-col items-center justify-center h-screen dark">
+            <div className="w-full max-w-md bg-gray-800 rounded-lg shadow-md p-6">
+              <h2 className="text-2xl font-bold text-gray-200 mb-4 text-center">
+                Seja bem vindo(a) ao meu portfólio!
+              </h2>
+              <p></p>
+              <form className="flex flex-col">
+                <input
+                  placeholder="Qual o seu nome?"
+                  className="bg-gray-700 text-gray-200 border-0 rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  type="text"
+                />
+                <button
+                  className={`${
+                    name
+                      ? "bg-gradient-to-r from-green-500 to-blue-500"
+                      : "bg-gray-500 cursor-not-allowed"
+                  } text-white font-bold py-2 px-4 rounded-md mt-4 transition ease-in-out duration-150`}
+                  onClick={handleSetUser}
+                  disabled={!name}
+                >
+                  Continuar
+                </button>
+              </form>
             </div>
           </div>
-        )
+        </div>
       )}
+
       <div id="main-div" className={cn("flex-1", `cursor-effect-${theme}`)}>
         <main className="h-svh flex items-center gap-16 justify-between max-w-7xl w-full m-auto flex-col xl:flex-row px-4 xl:px-0">
           <section className="h-full py-16 w-full xl:w-auto flex flex-col items-center xl:items-start">
