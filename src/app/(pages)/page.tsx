@@ -1,14 +1,14 @@
 "use client";
 
 import { ButtonComponent } from "@/components/Button";
-import { activeCursorEffectOnPage } from "@/utils/cursorEffects";
+import { useActiveCursorEffectOnPage } from "@/utils/cursorEffects";
 import { useContext } from "react";
 import ThemeContext from "@/contexts/theme";
 import Link from "next/link";
 import { useUser } from "@/contexts/user";
 
 export default function Home() {
-  activeCursorEffectOnPage();
+  useActiveCursorEffectOnPage();
   const { getUser } = useUser();
 
   return (

@@ -31,8 +31,8 @@ export default async function Project() {
         </div>
         <div className="px-2 cursor-pointer">
           <div className="flex-1">
-            {data.map((repo) => (
-              <Link target="_blank" href={repo.html_url}>
+            {data.map((repo, i) => (
+              <Link key={i} target="_blank" href={repo.html_url}>
                 <div className="w-full flex flex-col justify-center border border-gray-200 rounded-lg shadow transition duration-300 hover:border-blue-950 hover:shadow-lg space-y-2 my-2">
                   <div className="p-4">
                     <h2 className="text-lg font-bold">{repo.name}</h2>

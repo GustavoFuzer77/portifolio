@@ -1,6 +1,6 @@
 "use client";
 import React, { useContext, useEffect, useState } from "react";
-import { activeCursorEffectOnPage } from "@/utils/cursorEffects";
+import { useActiveCursorEffectOnPage } from "@/utils/cursorEffects";
 import { ButtonComponent } from "../Button";
 import ContainerComponent from "../Container";
 import ToggleComponentTheme from "../toggle-theme-component";
@@ -51,7 +51,7 @@ export default function LeftSidePage({
     setShowModal(false);
   };
 
-  activeCursorEffectOnPage();
+  useActiveCursorEffectOnPage();
 
   return (
     <>
@@ -117,7 +117,8 @@ export default function LeftSidePage({
               <div>
                 <div title="Uma jornada de mil milhas começa com um único passo - Lao Tzu">
                   <p className="italic max-w-60 opacity-70">
-                    "A journey of a thousand miles begins with a single step"
+                    &quot;A journey of a thousand miles begins with a single
+                    step&quot;
                   </p>
                   <p className="italic max-w-60 opacity-70"> - Lao Tzu</p>
                 </div>
