@@ -1,0 +1,38 @@
+.switch {
+  @apply font-normal relative inline-block w-14 h-8;
+}
+
+.switch input {
+  @apply opacity-0 w-0 h-0;
+}
+
+.slider {
+  @apply absolute cursor-pointer top-0 left-0 right-0 bottom-0 bg-night transition duration-500 rounded-full;
+}
+
+.slider::before {
+  @apply absolute before:content-[""] h-5 w-5 rounded-full left-10 bottom-16 shadow-inner bg-night transition duration-500;
+  box-shadow: inset 8px -4px 0px 0px #fff000; /* Tailwind não tem uma classe específica para box-shadow, então mantemos isso como está */
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.4em;
+  width: 1.4em;
+  border-radius: 50%;
+  left: 10%;
+  bottom: 15%;
+  box-shadow: inset 8px -4px 0px 0px #fff000;
+  transition: .5s;
+}
+
+input:checked + .slider:before {
+  transform: translateX(100%);
+  box-shadow: inset 15px -4px 0px 15px #fff000;
+}
+
+input:checked + .slider {
+  @apply bg-morning;
+}
+
